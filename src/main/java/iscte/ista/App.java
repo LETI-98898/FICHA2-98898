@@ -14,8 +14,7 @@ public class App {
     private static final String FIRSTNAMES_M_FILE = "data/firstnames_m.json";
     private static final String SURNAMES_FILE = "data/surnames.json";
 
-    private static final String STUDENTS_CSV_FILE =
-            "src/main/resources/data/students.csv";
+    private static final String STUDENTS_CSV_FILE = "data/students.csv";
 
     private static final int INITIAL_NUMBER = 21000;
 
@@ -82,9 +81,10 @@ public class App {
                 }
             }
 
-            PrintWriter writer =
-                    new PrintWriter(new File(STUDENTS_CSV_FILE));
+            File outputFile = new File(STUDENTS_CSV_FILE);
+            outputFile.getParentFile().mkdirs();
 
+            PrintWriter writer = new PrintWriter(outputFile);
             writer.println("number,name");
 
             for (Student student : students) {
