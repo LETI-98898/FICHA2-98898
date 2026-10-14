@@ -1,4 +1,4 @@
-package iscteiul.ista;
+package iscte.ista;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
